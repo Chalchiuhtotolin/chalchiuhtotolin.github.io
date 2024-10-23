@@ -1,49 +1,50 @@
+// Add ratings for CLAY GOLF POOL FTBL
 const data = [
     {
         name: "Bossdog",
-        ratings: ["3", "4", "4", "3"],
+        ratings: ["4", "3", "4", "3"],
     },
     {
         name: "Dick Wilde",
-        ratings: ["8", "10", "9", "8"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Hincey",
-        ratings: ["3", "4", "4", "3"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Bobo",
-        ratings: ["8", "10", "9", "8"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Bendell",
-        ratings: ["3", "4", "4", "3"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Northern",
-        ratings: ["8", "10", "9", "8"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Tony",
-        ratings: ["3", "4", "4", "3"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Heinz",
-        ratings: ["8", "10", "9", "8"],
+        ratings: ["8", "10", "8", "9"],
     },
     {
         name: "LookeTB",
-        ratings: ["3", "4", "4", "3"],
+        ratings: ["?", "?", "?", "?"],
     },
     {
         name: "Nicksy",
-        ratings: ["8", "10", "9", "8"],
+        ratings: ["?", "?", "?", "?"],
     },
 ];
 
 const container = document.querySelector('.pitch');
 
-data.forEach(item => {
+data.forEach(player => {
     const card = document.createElement('div');
     card.classList.add('card');
 
@@ -55,17 +56,22 @@ data.forEach(item => {
     portrait.src = "./static/turkey.png";
     portrait.classList.add('portrait');
 
-    const ratingsSum = item.ratings.reduce((acc, rating) => acc + parseFloat(rating), 0);
-    const ratingsMean = ratingsSum / item.ratings.length;
+    const ratingsSum = player.ratings.reduce((acc, rating) => acc + parseFloat(rating), 0);
+    const ratingsMean = ratingsSum / player.ratings.length;
     const roundedMean = Math.round(ratingsMean)
 
     const overallDiv = document.createElement('div');
     overallDiv.classList.add('overall');
-    overallDiv.textContent = roundedMean;
+    if (roundedMean) {
+        overallDiv.textContent = roundedMean;
+    }
+    else {
+        overallDiv.textContent = "?";
+    }
 
     const nameDiv = document.createElement('div');
     nameDiv.classList.add('name');
-    nameDiv.textContent = item.name;
+    nameDiv.textContent = player.name;
 
     const statsDiv = document.createElement('div');
     statsDiv.classList.add('stats');
@@ -82,7 +88,7 @@ data.forEach(item => {
 
     const ratingsDiv = document.createElement('div');
     ratingsDiv.classList.add('ratings');
-    item.ratings.forEach(rating => {
+    player.ratings.forEach(rating => {
         const ratingDiv = document.createElement('div');
         ratingDiv.classList.add('rating');
         ratingDiv.textContent = rating;
