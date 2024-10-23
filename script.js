@@ -32,7 +32,7 @@ const data = [
         ratings: ["8", "10", "9", "8"],
     },
     {
-        name: "LTB",
+        name: "LookeTB",
         ratings: ["3", "4", "4", "3"],
     },
     {
@@ -48,7 +48,7 @@ data.forEach(item => {
     card.classList.add('card');
 
     const img = document.createElement('img');
-    img.src = './static/card.png';
+    img.src = './static/shield.png';
     img.classList.add('shield');
 
     const portrait = document.createElement('img');

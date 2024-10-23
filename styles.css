@@ -22,21 +22,34 @@ h1 {
 .pitch {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
     background-image: url("./static/grass.jpg");
     background-size: 200px;
     background-repeat: repeat;
-    margin: 20px;
+    margin: 0 50px;
     box-shadow: inset 0px 0px 10px 1px rgb(30, 30, 30);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 0px rgba(254, 228, 136, 0);
+    }
+
+    to {
+        text-shadow: 0 0 8px #f1e9b5;
+    }
 }
 
 .card {
     position: relative;
-    margin: 0px auto;
-    width: 250px;
-    font-size: 24px;
-    color: rgb(254, 229, 136);
+    padding: 10px;
+    margin: auto;
+    width: 224px;
+    font-size: 22px;
     text-transform: uppercase;
+    color: rgb(254, 229, 136);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 .shield {
@@ -46,16 +59,16 @@ h1 {
 
 .portrait {
     position: absolute;
-    width: 50%;
+    width: 56%;
     height: auto;
-    top: 28%;
-    left: 30%;
+    top: 19%;
+    left: 28%;
 }
 
 .overall {
     position: absolute;
-    top: 28%;
-    left: 22%;
+    top: 24%;
+    left: 21%;
     transform: translate(-50%, -50%);
     font-size: 220%;
     font-weight: bold;
@@ -63,21 +76,21 @@ h1 {
 
 .name {
     position: absolute;
-    max-width: 76%;
-    top: 67%;
+    max-width: 74%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 120%;
     font-weight: bold;
     white-space: nowrap;
+    text-transform: capitalize;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-transform: capitalize;
 }
 
 .stats {
     position: absolute;
-    top: 78%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
