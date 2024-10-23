@@ -75,7 +75,7 @@ data.forEach(item => {
     eventsDiv.classList.add('events');
     events.forEach(event => {
         const eventDiv = document.createElement('div');
-        eventDiv.classList.add('item');
+        eventDiv.classList.add('event');
         eventDiv.textContent = event;
         eventsDiv.appendChild(eventDiv);
     });
@@ -84,7 +84,7 @@ data.forEach(item => {
     ratingsDiv.classList.add('ratings');
     item.ratings.forEach(rating => {
         const ratingDiv = document.createElement('div');
-        ratingDiv.classList.add('item');
+        ratingDiv.classList.add('rating');
         ratingDiv.textContent = rating;
         ratingsDiv.appendChild(ratingDiv);
     });
