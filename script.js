@@ -139,31 +139,6 @@ data.forEach(player => {
         box.classList.remove('flipped');
     };
 
-    let flipped = false
-    box.ontouchstart = function () {
-        this.classList.add('flipped');
-        if (!flipped) {
-            flipped = true
-            setTimeout(() => {
-                portrait.src = player.image
-                overallDiv.textContent = roundedMean;
-                player.ratings.forEach((rating, index) => {
-                    ratingsDiv.children[index].textContent = rating;
-                });
-            }, 400);
-        }
-        else {
-            flipped = false
-            setTimeout(() => {
-                portrait.src = "./static/turkey.png"
-                overallDiv.textContent = '?';
-                player.ratings.forEach((_, index) => {
-                    ratingsDiv.children[index].textContent = "?";
-                });
-            }, 400);
-        };
-    };
-
     box.appendChild(card);
     container.appendChild(box);
 });
