@@ -70,7 +70,7 @@ h1 {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-.box.animated .card {
+.box.flipped .card {
     animation: glow 1s ease-in-out infinite alternate, spin 0.3s linear 2;
 }
 
