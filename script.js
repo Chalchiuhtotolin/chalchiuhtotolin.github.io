@@ -111,7 +111,7 @@ data.forEach(player => {
     card.appendChild(nameDiv);
     card.appendChild(statsDiv);
 
-    box.onmouseenter = function () {
+    box.onpointerenter = function () {
         this.classList.add('flipped');
 
         setTimeout(() => {
@@ -123,7 +123,7 @@ data.forEach(player => {
         }, 400);
     };
 
-    box.onmouseleave = function () {
+    box.onpointerleave = function () {
         this.classList.add('flipped');
 
         setTimeout(() => {
