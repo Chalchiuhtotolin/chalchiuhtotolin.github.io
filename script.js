@@ -3,42 +3,52 @@ const data = [
     {
         name: "Bossdog",
         ratings: ["4", "3", "4", "3"],
+        image: "./static/star.png"
     },
     {
         name: "Dick Wilde",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Hincey",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Bobo",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Bendell",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Northern",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Tony",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Heinz",
         ratings: ["8", "10", "8", "9"],
+        image: "./static/star.png"
     },
     {
         name: "LookeTB",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
     {
         name: "Nicksy",
         ratings: ["?", "?", "?", "?"],
+        image: "./static/star.png"
     },
 ];
 
@@ -105,22 +115,24 @@ data.forEach(player => {
         this.classList.add('animated');
 
         setTimeout(() => {
+            portrait.src = player.image
             overallDiv.textContent = roundedMean;
             player.ratings.forEach((rating, index) => {
                 ratingsDiv.children[index].textContent = rating;
             });
-        }, 500);
+        }, 400);
     };
 
     box.onmouseleave = function () {
         this.classList.add('animated');
 
         setTimeout(() => {
+            portrait.src = "./static/turkey.png"
             overallDiv.textContent = '?';
             player.ratings.forEach((_, index) => {
                 ratingsDiv.children[index].textContent = "?";
             });
-        }, 500);
+        }, 400);
     };
 
     card.onanimationend = function () {
