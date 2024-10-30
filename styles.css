@@ -10,13 +10,16 @@
 }
 
 body {
+    text-align: center;
+    font-size: 18px;
     font-family: "DIN", sans-serif;
     background-color: rgb(30, 30, 30);
     color: rgb(255, 255, 255);
 }
 
-h1 {
-    text-align: center;
+#banner {
+    max-width: 100%;
+    margin: auto;
 }
 
 .pitch {
@@ -85,6 +88,7 @@ h1 {
     height: auto;
     top: 20%;
     left: 28%;
+    mask-image: linear-gradient(black 85%, transparent);
 }
 
 .overall {
@@ -117,18 +121,18 @@ h1 {
     font-size: 80%;
 }
 
-.events,
-.ratings {
+.titles,
+.values {
     display: flex;
     justify-content: center;
 }
 
-.event,
-.rating {
+.title,
+.value {
     width: 100%;
     margin: 0 5px;
 }
 
-.rating {
+.value {
     font-weight: bold;
 }
