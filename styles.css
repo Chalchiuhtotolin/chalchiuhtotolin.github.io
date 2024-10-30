@@ -18,8 +18,8 @@ body {
 }
 
 #banner {
+    scale: 0.8;
     max-width: 100%;
-    margin: auto;
 }
 
 .pitch {

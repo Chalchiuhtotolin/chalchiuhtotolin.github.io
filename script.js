@@ -2,12 +2,12 @@
 const data = [
     {
         name: "Bossdog",
-        stats: ['16st', '5,11'],
+        attributes: ['16st', '5,11'],
         ratings: ["4", "3", "4", "3"],
     },
     {
         name: "Dick Wilde",
-        stats: ['12st', '5,0'],
+        attributes: ['12st', '5,0'],
         ratings: ["?", "?", "?", "?"],
     },
     {
@@ -65,7 +65,7 @@ data.forEach(player => {
 
     const overallDiv = document.createElement('div');
     overallDiv.classList.add('overall');
-    overallDiv.textContent = "?";
+    overallDiv.textContent = "";
 
     const nameDiv = document.createElement('div');
     nameDiv.classList.add('name');
@@ -106,12 +106,12 @@ data.forEach(player => {
         return statsDiv
     }
 
-    const eventsDiv = generate(["CLAY", "GOLF", "POOL", "FTBL"], player.ratings, 'std')
+    const eventsDiv = generate(["CLAY", "GOLF", "POOL", "FTBL"], player.ratings, 'back')
     eventsDiv.style.display = 'none';
     card.appendChild(eventsDiv);
 
-    if (player.stats) {
-        const attributeDiv = generate(["WEIGHT", "HEIGHT"], player.stats, 'atr')
+    if (player.attributes) {
+        const attributeDiv = generate(["WEIGHT", "HEIGHT"], player.attributes, 'front')
         card.appendChild(attributeDiv);
     }
 
@@ -123,8 +123,8 @@ data.forEach(player => {
         setTimeout(() => {
             portrait.src = "./static/star.png" //"./static/" + player.name + ".png"
             overallDiv.textContent = roundedMean;
-            card.querySelector('.std').style.display = 'block';
-            card.querySelector('.atr').style.display = 'none';
+            card.querySelector('.back').style.display = 'block';
+            card.querySelector('.front').style.display = 'none';
         }, 400);
     };
 
@@ -133,9 +133,9 @@ data.forEach(player => {
 
         setTimeout(() => {
             portrait.src = "./static/turkey.png";
-            overallDiv.textContent = '?';
-            card.querySelector('.std').style.display = 'none';
-            card.querySelector('.atr').style.display = 'block';
+            overallDiv.textContent = '';
+            card.querySelector('.back').style.display = 'none';
+            card.querySelector('.front').style.display = 'block';
         }, 400);
     };
 
